@@ -17,7 +17,7 @@ spec:
       containers:
       - name: cloudflared
         image: cloudflare/cloudflared:latest
-        command:
+        args:
           - tunnel
           - --no-autoupdate
           - run
