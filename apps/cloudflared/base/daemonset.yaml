@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: cloudflared
+  namespace: cloudflare
+spec:
+  selector:
+    matchLabels:
+      app: cloudflared
+  template:
+    metadata:
+      labels:
+        app: cloudflared
+    spec:
+      hostNetwork: true
+      dnsPolicy: ClusterFirstWithHostNet
+      containers:
+      - name: cloudflared
+        image: cloudflare/cloudflared:latest
+        command:
+          - tunnel
+          - --no-autoupdate
+          - run
+          - --token
+          - "$(TUNNEL_TOKEN_YOGA)"
+        env:
+          - name: TUNNEL_TOKEN_YOGA
+            valueFrom:
+              secretKeyRef:
+                name: cloudflare
+                key: tunnel-token-yoga
+      restartPolicy: Always
