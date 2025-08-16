@@ -24,9 +24,9 @@ spec:
       version: '*'
   install:
     crds: Create
+    createNamespace: true
   interval: 1h0m0s
   releaseName: cnpg-controller
   targetNamespace: cnpg-system
-  createNamespace: true
   upgrade:
     crds: CreateReplace
