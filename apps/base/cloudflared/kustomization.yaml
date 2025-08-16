@@ -1,3 +1,4 @@
 resources:
-  - daemonset.yaml
   - namespace.yaml
+  - sealed-secret.yaml
+  - daemonset.yaml
