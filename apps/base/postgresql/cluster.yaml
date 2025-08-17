@@ -8,3 +8,10 @@ spec:
   instances: 3
   storage:
     size: 5Gi
+  managed:
+    roles:
+    - name: n8n
+      comment: n8n user
+      login: true
+      passwordSecret:
+        name: pg-cluster-n8n
