@@ -1,4 +1,5 @@
 resources:
   - namespace.yaml
-  - sealed-secret-n8n.yaml
+  - n8n/sealed-secret.yaml
   - cluster.yaml
+  - n8n/databases.yaml

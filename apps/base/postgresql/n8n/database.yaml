@@ -1,0 +1,10 @@
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: Database
+metadata:
+  name: n8n-db
+spec:
+  name: n8n-db
+  owner: n8n
+  cluster:
+    name: pg-cluster
