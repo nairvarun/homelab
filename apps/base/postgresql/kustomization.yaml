@@ -2,4 +2,4 @@ resources:
   - namespace.yaml
   - n8n/sealed-secret.yaml
   - cluster.yaml
-  - n8n/databases.yaml
+  - n8n/database.yaml
