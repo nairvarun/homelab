@@ -1,0 +1,8 @@
+{
+    "yaml.schemas": {
+        "https://www.schemastore.org/yamllint.json": [
+            "file:///Users/nv/dev/homelab/apps/base/cloudnative-pg/cluster.yaml",
+            "file:///Users/nv/dev/homelab/apps/base/postgresql/cluster.yaml"
+        ]
+    }
+}
