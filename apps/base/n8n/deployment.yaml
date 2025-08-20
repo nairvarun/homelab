@@ -56,6 +56,8 @@ spec:
               value: "5678"
             - name: N8N_RUNNERS_ENABLED
               value: "true"
+            - name: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
+              value: "false"
           image: n8nio/n8n
           name: n8n
           ports:
