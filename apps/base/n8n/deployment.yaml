@@ -35,21 +35,21 @@ spec:
             - name: DB_TYPE
               value: postgresdb
             - name: DB_POSTGRESDB_HOST
-              value: postgres-service.n8n.svc.cluster.local
+              value: pg-cluster-rw.database.svc.cluster.local
             - name: DB_POSTGRESDB_PORT
               value: "5432"
             - name: DB_POSTGRESDB_DATABASE
-              value: n8n
+              value: n8n-db
             - name: DB_POSTGRESDB_USER
               valueFrom:
                 secretKeyRef:
-                  name: postgres-secret
-                  key: POSTGRES_NON_ROOT_USER
+                  name: n8n-db-secret
+                  key: user
             - name: DB_POSTGRESDB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: postgres-secret
-                  key: POSTGRES_NON_ROOT_PASSWORD
+                  name: n8n-db-secret
+                  key: password
             - name: N8N_PROTOCOL
               value: http
             - name: N8N_PORT
@@ -61,8 +61,10 @@ spec:
           resources:
             requests:
               memory: "250Mi"
+              cpu: "500m"
             limits:
-              memory: "500Mi"
+              memory: "1Gi"
+              cpu: "1000m"
           volumeMounts:
             - mountPath: /home/node/.n8n
               name: n8n-claim0
@@ -71,9 +73,6 @@ spec:
         - name: n8n-claim0
           persistentVolumeClaim:
             claimName: n8n-claim0
-        - name: n8n-secret
+        - name: n8n-db-secret
           secret:
-            secretName: n8n-secret
-        - name: postgres-secret
-          secret:
-            secretName: postgres-secret
+            secretName: n8n-db-secret
