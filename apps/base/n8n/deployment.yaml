@@ -21,7 +21,7 @@ spec:
       initContainers:
         - name: volume-permissions
           image: busybox:1.36
-          command: ["sh", "-c", "chown 1000:1000 /home/node/.n8n && chmod -R 755 /home/node/.n8n"]
+          command: ["sh", "-c", "chown 1000:1000 /home/node/.n8n && chmod -R 700 /home/node/.n8n"]
           volumeMounts:
             - name: n8n-claim0
               mountPath: /home/node/.n8n
