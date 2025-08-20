@@ -1,6 +1,6 @@
 resources:
   - namespace.yaml
-  - sealed-secret.yaml
+  # - sealed-secret.yaml
   - persistentvolumeclaim.yaml
   - service.yaml
   - deployment.yaml
