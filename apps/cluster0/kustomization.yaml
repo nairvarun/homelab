@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - ../base/cloudflared
   - ../base/postgresql
+  - ../base/n8n
