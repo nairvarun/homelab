@@ -7,11 +7,11 @@ metadata:
   name: n8n
   namespace: n8n
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
-    - name: "5678"
-      port: 5678
+    - protocol: TCP
+      port: 80
       targetPort: 5678
-      protocol: TCP
+      nodePort: 32678
   selector:
     service: n8n
