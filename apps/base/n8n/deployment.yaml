@@ -52,8 +52,12 @@ spec:
                   key: password
             - name: N8N_PROTOCOL
               value: http
+            - name: N8N_EDITOR_BASE_URL
+              value: https://n8n.nairvarun.com
             - name: N8N_PORT
               value: "5678"
+            - name: WEBHOOK_URL
+              value: https://n8n.nairvarun.com
             - name: N8N_RUNNERS_ENABLED
               value: "true"
             - name: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
