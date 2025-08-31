@@ -16,6 +16,6 @@ spec:
       containers:
       - name: ollama
         image: ollama/ollama:latest
-        command: ["ollama serve && ollama pull gemma3:1b"]
+        command: ["/bin/bash", "-c", "ollama serve && ollama pull gemma3:1b"]
         ports:
         - containerPort: 11434
