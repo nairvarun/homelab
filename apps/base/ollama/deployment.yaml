@@ -20,7 +20,7 @@ spec:
       initContainers:
         - name: ollama-model-puller
           image: ollama/ollama:latest
-          command: ["ollama", "pull", "gemma3:1b"]
+          # command: ["ollama", "pull", "gemma3:1b"]
           ports:
             - containerPort: 11434
           volumeMounts:
