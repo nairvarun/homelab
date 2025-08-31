@@ -19,9 +19,9 @@ spec:
         command: ["/bin/bash", "-c"]
         args:
           - |
-            ollama serve &;
-            sleep 10;
-            ollama pull gemma3:1b;
-            wait; # waits for background processes to finish before container exits
+            ollama serve &
+            sleep 10
+            ollama pull gemma3:1b
+            wait # waits for background processes to finish before container exits
         ports:
         - containerPort: 11434
