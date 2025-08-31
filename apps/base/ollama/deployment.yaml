@@ -18,18 +18,21 @@ spec:
           persistentVolumeClaim:
             claimName: ollama-pvc
       initContainers:
-        - name: ollama-init
+        - name: ollama-model-puller
           image: ollama/ollama:latest
-          ports:
-          - containerPort: 11434
+          command: ["/bin/sh", "-c"]
+          args:
+            - |
+              ollama serve;
+              ollama pull gemma3:1b;
           volumeMounts:
             - name: ollama-pvc
               mountPath: /root/.ollama
       containers:
-        - name: ollama
-          image: ollama/ollama:latest
-          ports:
-          - containerPort: 11434
-          volumeMounts:
-            - name: ollama-pvc
-              mountPath: /root/.ollama
+      - name: ollama
+        image: ollama/ollama:latest
+        ports:
+        - containerPort: 11434
+        volumeMounts:
+          - name: ollama-pvc
+            mountPath: /root/.ollama
