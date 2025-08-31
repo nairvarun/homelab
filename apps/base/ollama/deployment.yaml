@@ -18,7 +18,7 @@ spec:
           persistentVolumeClaim:
             claimName: ollama-pvc
       initContainers:
-        - name: ollama-model-puller
+        - name: ollama-init
           image: ollama/ollama:latest
           command: ["ollama"]
           args: ["pull", "gemma3:1b"]
