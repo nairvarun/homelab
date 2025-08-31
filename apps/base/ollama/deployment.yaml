@@ -20,10 +20,7 @@ spec:
       initContainers:
         - name: ollama-model-puller
           image: ollama/ollama:latest
-          command: ["/bin/sh", "-c"]
-          args:
-            - |
-              ollama pull gemma3:1b;
+          command: ["ollama", "pull", "gemma3:1b"]
           volumeMounts:
             - name: ollama-pvc
               mountPath: /root/.ollama
