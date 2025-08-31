@@ -4,4 +4,4 @@ resources:
   - ../base/cloudflared
   - ../base/postgresql
   - ../base/n8n
-  # - ../base/ollama
+  - ../base/ollama
