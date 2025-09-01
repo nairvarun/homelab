@@ -7,11 +7,10 @@ metadata:
   name: n8n
   namespace: n8n
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
     - protocol: TCP
       port: 80
       targetPort: 5678
-      nodePort: 32678
   selector:
     service: n8n
