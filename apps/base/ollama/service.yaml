@@ -5,11 +5,10 @@ metadata:
   name: ollama
   namespace: ollama
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
   - protocol: TCP
     port: 80
     targetPort: 11434
-    nodePort: 32434
   selector:
     name: ollama
