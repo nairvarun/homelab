@@ -1,18 +1,14 @@
 ---
-apiVersion: networking.k8s.io/v1
-kind: Ingress
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRouteTCP
 metadata:
-  name: key-sync
+  name: key-sync-ingressroute
   namespace: key-sync
 spec:
-  rules:
-    - host: key-sync.nairvarun.com
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: key-sync
-                port:
-                  number: 22
+  entryPoints:
+    - ssh
+  routes:
+    - match: HostSNI(`*`)
+      services:
+        - name: openssh-service-nodeport
+          port: 2222
