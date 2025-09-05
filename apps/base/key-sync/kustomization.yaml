@@ -5,5 +5,5 @@ resources:
   - sealed-secret.yaml
   - persistentvolumeclaim.yaml
   - service.yaml
-  - ingress.yaml
+  - ingressroute.yaml
   - deployment.yaml
