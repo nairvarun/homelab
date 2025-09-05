@@ -5,4 +5,3 @@ resources:
   - ../base/postgresql
   - ../base/n8n
   - ../base/ollama
-  - ./basic-auth-sealed.yaml
