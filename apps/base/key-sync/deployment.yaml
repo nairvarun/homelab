@@ -1,0 +1,77 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: key-sync
+  name: key-sync
+  namespace: key-sync
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: key-sync
+  template:
+    metadata:
+      labels:
+        app: key-sync
+    spec:
+      initContainers:
+        - name: volume-permissions
+          image: alpine
+          command: ["/bin/sh", "-c"]
+          args:
+            - |
+              [ ! -f .git-init-complete ] && \
+              mkdir /key-sync && \
+              chown 1000:1000 /key-sync && \
+              chmod -R 700 /key-sync && \
+              apk update && \
+              apk upgrade && \
+              apk add git && \
+              git config --global init.defaultBranch main && \
+              git init --bare && \
+              touch .git-init-complete
+          volumeMounts:
+            - name: key-sync-claim
+              mountPath: /key-sync
+      containers:
+        - name: key-sync
+          image: lscr.io/linuxserver/openssh-server
+          env:
+            - name: PUID
+              value: "1000"
+            - name: PGID
+              value: "1000"
+            - name: PUBLIC_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: key-sync-secret
+                  key: git-pubkey
+            - name: SUDO_ACCESS
+              value: "false"
+            - name: PASSWORD_ACCESS
+              value: "false"
+            - name: USER_NAME
+              value: "git"
+            - name: LOG_STDOUT
+              value: "true"
+          ports:
+            - containerPort: 2222
+          resources:
+            requests:
+              memory: "250Mi"
+              cpu: "500m"
+            limits:
+              memory: "500Mi"
+              cpu: "1000m"
+          volumeMounts:
+            - mountPath: /key-sync
+              name: key-sync-claim
+      volumes:
+        - name: key-sync-claim
+          persistentVolumeClaim:
+            claimName: key-sync-claim
+        - name: key-sync-secret
+          secret:
+            secretName: key-sync-secret
