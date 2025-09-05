@@ -6,4 +6,4 @@ metadata:
 spec:
   valuesContent: |-
     additionalArguments:
-      - --entrypoints.ssh.address=:2200/tcp
+      - --entrypoints.ssh.address=:22/tcp
