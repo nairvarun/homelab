@@ -23,7 +23,6 @@ spec:
           args:
             - |
               [ ! -f .git-init-complete ] && \
-              mkdir /key-sync && \
               chown 1000:1000 /key-sync && \
               chmod -R 700 /key-sync && \
               apk update && \
