@@ -10,7 +10,7 @@ spec:
   type: ClusterIP
   ports:
     - protocol: TCP
-      port: 22
+      port: 2222
       targetPort: 2222
   selector:
     app: key-sync
