@@ -5,3 +5,4 @@ resources:
   - ../base/postgresql
   - ../base/n8n
   - ../base/ollama
+  - ../base/key-sync
