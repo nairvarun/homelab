@@ -4,7 +4,7 @@ commonLabels:
   env: cluster0
 resources:
   - ../base/cloudflared
-  - ../base/postgresql
-  - ../base/n8n
-  - ../base/ollama
+  # - ../base/postgresql
+  # - ../base/n8n
+  # - ../base/ollama
   # - ../base/key-sync
