@@ -16,6 +16,23 @@ spec:
       login: true
       passwordSecret:
         name: pg-cluster-n8n
+    - name: dante
+      ensure: present
+      comment: my database-side comment
+      login: true
+      superuser: false
+      createdb: true
+      createrole: false
+      inherit: false
+      replication: false
+      bypassrls: false
+      connectionLimit: 4
+      validUntil: "2053-04-12T15:04:05Z"
+      inRoles:
+        - pg_monitor
+        - pg_signal_backend
+      passwordSecret:
+        name: cluster-example-dante
 ---
 apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
@@ -32,7 +49,13 @@ spec:
     - name: app
       createdb: true
       login: true
-    - name: dante
+    - name: n8n
+      ensure: present
+      comment: n8n user
+      login: true
+      passwordSecret:
+        name: pg-cluster-n8n
+    - name: dante2222
       ensure: present
       comment: my database-side comment
       login: true
@@ -52,7 +75,7 @@ spec:
 ---
 apiVersion: v1
 data:
-  username: ZGFudGU=
+  username: ZGFudGUzMzMz
   password: ZGFudGU=
 kind: Secret
 metadata:
