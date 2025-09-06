@@ -7,11 +7,11 @@ metadata:
 spec:
   selector:
     matchLabels:
-      name: ollama
+      app: ollama
   template:
     metadata:
       labels:
-        name: ollama
+        app: ollama
     spec:
       containers:
       - name: ollama

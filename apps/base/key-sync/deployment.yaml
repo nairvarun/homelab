@@ -2,8 +2,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app: key-sync
   name: key-sync
   namespace: key-sync
 spec:

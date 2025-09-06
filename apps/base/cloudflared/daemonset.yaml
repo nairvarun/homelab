@@ -4,8 +4,6 @@ kind: DaemonSet
 metadata:
   name: cloudflared
   namespace: cloudflare
-  labels:
-    app: cloudflared
 spec:
   selector:
     matchLabels:
