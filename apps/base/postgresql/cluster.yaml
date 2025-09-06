@@ -16,3 +16,9 @@ spec:
       login: true
       passwordSecret:
         name: pg-cluster-n8n
+    - name: n8n-test
+      ensure: present
+      comment: n8n user
+      login: true
+      passwordSecret:
+        name: pg-cluster-n8n
