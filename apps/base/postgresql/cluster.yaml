@@ -11,6 +11,7 @@ spec:
   managed:
     roles:
     - name: n8n
+      ensure: present
       comment: n8n user
       login: true
       passwordSecret:
