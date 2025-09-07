@@ -5,7 +5,6 @@ metadata:
   name: cockpit-ingress
   namespace: cockpit
   annotations:
-    traefik.ingress.kubernetes.io/service.scheme: https
     traefik.ingress.kubernetes.io/service.insecureSkipVerify: "true"
 spec:
   rules:
