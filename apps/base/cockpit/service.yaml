@@ -8,5 +8,5 @@ spec:
   ports:
     - name: cockpit
       protocol: TCP
-      port: 443
+      port: 80
       targetPort: 9090
