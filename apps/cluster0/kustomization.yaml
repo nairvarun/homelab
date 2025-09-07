@@ -1,7 +1,5 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-commonLabels:
-  env: cluster0
 resources:
   - ../base/cloudflared
   - ../base/cockpit
@@ -9,8 +7,3 @@ resources:
   - ../base/n8n
   - ../base/ollama
   # - ../base/key-sync
-patches:
-  - path: ../base/cockpit/patches/remove-selector-cockpit-service.yaml
-    target:
-      kind: Service
-      name: cockpit-service
