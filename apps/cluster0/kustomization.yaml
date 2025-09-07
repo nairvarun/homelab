@@ -9,3 +9,8 @@ resources:
   - ../base/n8n
   - ../base/ollama
   # - ../base/key-sync
+patches:
+  - path: ../base/cockpit/patches/remove-selector-cockpit-service.yaml
+    target:
+      kind: Service
+      name: cockpit-service

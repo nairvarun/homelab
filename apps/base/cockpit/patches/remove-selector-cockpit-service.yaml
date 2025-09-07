@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cockpit-service
+  namespace: cockpit
+spec:
+  # labels from the kustomization adds a selector automatically
+  # we need a svc without any selector for this to work
+  # This entire 'selector' key will be removed from the final manifest
+  selector: {}
