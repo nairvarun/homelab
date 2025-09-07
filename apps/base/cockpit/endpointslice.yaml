@@ -8,12 +8,10 @@ metadata:
     kubernetes.io/service-name: cockpit-service
 addressType: IPv4
 ports:
-  - name: http
-    protocol: TCP
-    port: 80
   - name: cockpit
     protocol: TCP
     port: 9090
 endpoints:
   - addresses:
-    - "192.168.0.2"
+      - "192.168.0.2"
+    hostname: "cockpit.nairvarun.com"
