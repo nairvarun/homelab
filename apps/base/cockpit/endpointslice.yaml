@@ -2,13 +2,18 @@
 apiVersion: discovery.k8s.io/v1
 kind: EndpointSlice
 metadata:  
-  name: cockpit-service
+  name: cockpit-endpointslice
   namespace: cockpit
   labels:
     kubernetes.io/service-name: cockpit-service
 addressType: IPv4
 ports:
-  - port: 9090
+  - name: http
+    protocol: TCP
+    port: 80
+  - name: cockpit
+    protocol: TCP
+    port: 9090
 endpoints:
   - addresses:
     - "192.168.0.2"
