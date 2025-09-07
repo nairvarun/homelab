@@ -42,7 +42,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: n8n-db-secret
-                  key: user
+                  key: username
             - name: DB_POSTGRESDB_PASSWORD
               valueFrom:
                 secretKeyRef:
