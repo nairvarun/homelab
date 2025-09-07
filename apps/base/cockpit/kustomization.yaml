@@ -7,6 +7,6 @@ labels:
 resources:
   - namespace.yaml
   - service.yaml
-  - endpoint.yaml
+  - endpointslice.yaml
   - ingress.yaml
 
