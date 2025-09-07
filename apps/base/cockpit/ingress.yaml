@@ -4,6 +4,8 @@ kind: Ingress
 metadata:
   name: cockpit-ingress
   namespace: cockpit
+  annotations:
+    traefik.ingress.kubernetes.io/service.scheme: https
 spec:
   rules:
     - host: cockpit.nairvarun.com
