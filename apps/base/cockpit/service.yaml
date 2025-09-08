@@ -9,4 +9,4 @@ spec:
     - name: cockpit
       protocol: TCP
       port: 9090
-      targetPort: 9090
+      targetPort: 5678
