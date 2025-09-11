@@ -7,5 +7,5 @@ data:
   cockpit.conf: |
     [WebService]
     AllowUnencrypted=true
-    Origins=https://cockpit.nairvarun.com https://192.168.0.2:9091
+    Origins=https://cockpit.nairvarun.com https://192.168.0.2:9090
     ProtocolHeader=X-Forwarded-Proto
