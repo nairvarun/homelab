@@ -1,0 +1,35 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ensure-cockpit-config
+  namespace: cockpit
+spec:
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+      - name: ensure-cockpit-config
+        image: busybox
+        command: ["/bin/sh", "-c"]
+        args:
+          - |
+            CONFIG_FILE=/host/etc/cockpit/cockpit.conf
+            if [ ! -f "$CONFIG_FILE" ]; then
+              echo "Creating cockpit.conf from ConfigMap..."
+              cp /config/cockpit.conf "$CONFIG_FILE"
+            else
+              echo "cockpit.conf already exists, skipping."
+            fi
+        volumeMounts:
+        - name: host-cockpit-etc
+          mountPath: /host/etc/cockpit
+        - name: cockpit-config
+          mountPath: /config
+      volumes:
+      - name: host-cockpit-etc
+        hostPath:
+          path: /etc/cockpit
+          type: DirectoryOrCreate
+      - name: cockpit-config
+        configMap:
+          name: cockpit-config

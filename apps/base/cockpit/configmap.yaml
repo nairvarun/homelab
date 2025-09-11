@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cockpit-config
+  namespace: cockpit
+data:
+  cockpit.conf: |
+    [WebService]
+    AllowUnencrypted=true
+    Origins=https://cockpit.nairvarun.com https://192.168.0.2:9091
+    ProtocolHeader=X-Forwarded-Proto

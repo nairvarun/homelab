@@ -6,7 +6,8 @@ labels:
       app: cockpit
 resources:
   - namespace.yaml
+  - configmap.yaml
+  - job.yaml
   - service.yaml
   - endpoints.yaml
   - ingress.yaml
-
