@@ -6,6 +6,7 @@ metadata:
   namespace: cockpit
   annotations:
     traefik.ingress.kubernetes.io/service.insecureSkipVerify: "true"
+    traefik.ingress.kubernetes.io/forwarded-headers: "true"
 spec:
   rules:
     - host: cockpit.nairvarun.com
