@@ -8,7 +8,7 @@ spec:
   interval: 1m
   chart:
     spec:
-      chart: ./apps/base/playground/local-helm/helmls   # local path in repo
+      chart: ./apps/base/playground/local-helm/helm   # local path in repo
       sourceRef:
         kind: GitRepository
         name: flux-system
