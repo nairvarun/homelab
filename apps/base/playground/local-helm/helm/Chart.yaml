@@ -1,0 +1,4 @@
+apiVersion: v2
+name: local-helm
+description: local-helm Helm Chart
+version: 1.0.0
