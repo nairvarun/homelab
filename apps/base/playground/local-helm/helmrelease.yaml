@@ -15,6 +15,8 @@ spec:
         namespace: flux-system
       valuesFiles:
         - ./apps/base/playground/local-helm/helm/values/dev.yaml
+      driftDetection:
+        mode: enabled
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
@@ -32,3 +34,5 @@ spec:
         namespace: flux-system
       valuesFiles:
         - ./apps/base/playground/local-helm/helm/values/prod.yaml
+      driftDetection:
+        mode: enabled
