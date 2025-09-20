@@ -14,7 +14,7 @@ spec:
         name: flux-system
         namespace: flux-system
       valuesFiles:
-        - ./apps/base/playground/local-helm/helm/values/dev.yaml
+        - values/dev.yaml
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
