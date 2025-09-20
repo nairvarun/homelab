@@ -7,12 +7,3 @@ metadata:
 data:
   TEST_VAL: "{{ .Values.test_val }}"
   ANOTHER_VAL: "999"
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: local-helm2
-  namespace: "{{ .Values.namespace }}" 
-data:
-  TEST_VAL: "{{ .Values.test_val }}"
-  ANOTHER_VAL: "999"
