@@ -1,5 +1,5 @@
 ---
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: playground-local-helm-helmrelease-dev
@@ -8,7 +8,7 @@ spec:
   interval: 1m
   chart:
     spec:
-      chart: ./apps/base/playground/local-helm   # local path in repo
+      chart: ./apps/base/playground/local-helm/helmls   # local path in repo
       sourceRef:
         kind: GitRepository
         name: flux-system
@@ -16,7 +16,7 @@ spec:
   valuesFiles:
     - ./apps/base/playground/local-helm/helm/values/dev.yaml
 ---
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: playground-local-helm-helmrelease-prod
