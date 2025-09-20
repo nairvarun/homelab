@@ -11,7 +11,7 @@ spec:
       chart: ./apps/base/playground/local-helm   # local path in repo
       sourceRef:
         kind: GitRepository
-        name: local-helm
+        name: flux-system
         namespace: flux-system
   valuesFiles:
     - ./apps/base/playground/local-helm/helm/values/dev.yaml
@@ -28,7 +28,7 @@ spec:
       chart: ./apps/base/playground/local-helm/helm   # local path in repo
       sourceRef:
         kind: GitRepository
-        name: local-helm
+        name: flux-system
         namespace: flux-system
   valuesFiles:
     - ./apps/base/playground/local-helm/helm/values/prod.yaml
