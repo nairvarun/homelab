@@ -7,4 +7,4 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: playground-local-helm-uat
+  name: playground-local-helm-prod
