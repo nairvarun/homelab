@@ -6,7 +6,6 @@ labels:
 resources:
   - namespace.yaml
   - fluxcd/helm-app
-  - fluxcd/kustomize-app
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
