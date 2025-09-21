@@ -29,3 +29,21 @@ spec:
         namespace: argocd-system
   upgrade:
     crds: CreateReplace
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd
+  namespace: argocd-system
+spec:
+  rules:
+    - host: argocd.nairvarun.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: argocd-server
+                port:
+                  name: http
