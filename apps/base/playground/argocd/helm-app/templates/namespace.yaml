@@ -8,8 +8,4 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: playground-argocd-helm-app-prod
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: playground-argocd-helm-app-uat
+
