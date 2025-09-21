@@ -26,6 +26,7 @@ spec:
   chart:
     spec:
       chart: ./apps/base/playground/local-helm/helm   # local path in repo
+      reconcileStrategy: Revision
       sourceRef:
         kind: GitRepository
         name: flux-system
