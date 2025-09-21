@@ -1,0 +1,4 @@
+apiVersion: v2
+name: playground-argocd-helm-app
+description: playground-argocd-helm-app Helm Chart
+version: 1.2.0
