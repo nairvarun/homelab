@@ -5,7 +5,7 @@ metadata:
   name: playground-local-helm-helmrelease-dev
   namespace: playground
 spec:
-  interval: 1m
+  interval: 10s
   chart:
     spec:
       chart: ./apps/base/playground/local-helm/helm   # local path in repo
@@ -23,7 +23,7 @@ metadata:
   name: playground-local-helm-helmrelease-prod
   namespace: playground
 spec:
-  interval: 1m
+  interval: 10s
   chart:
     spec:
       chart: ./apps/base/playground/local-helm/helm   # local path in repo
