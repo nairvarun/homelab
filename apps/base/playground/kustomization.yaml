@@ -5,7 +5,7 @@ labels:
       app: playground
 resources:
   - namespace.yaml
-  - fluxcd/helm-app
+  # - fluxcd/helm-app
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
