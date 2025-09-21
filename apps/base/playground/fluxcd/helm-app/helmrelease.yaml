@@ -24,6 +24,8 @@ metadata:
   namespace: playground
 spec:
   interval: 10s
+  driftDetection:
+    mode: enabled
   chart:
     spec:
       chart: ./apps/base/playground/fluxcd/helm-app   # local path in repo
