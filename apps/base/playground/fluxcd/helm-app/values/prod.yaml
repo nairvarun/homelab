@@ -1,2 +1,2 @@
 test_val: 100000
-namespace: playground-local-helm-prod
+namespace: playground-fluxcd-helm-app-prod

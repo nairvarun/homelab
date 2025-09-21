@@ -1,4 +1,4 @@
 apiVersion: v2
-name: local-helm
-description: local-helm Helm Chart
-version: 1.2.0
+name: playground-fluxcd-helm-app
+description: playground-fluxcd-helm-app Helm Chart
+version: 1.0.0
