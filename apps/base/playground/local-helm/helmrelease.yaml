@@ -9,6 +9,7 @@ spec:
   chart:
     spec:
       chart: ./apps/base/playground/local-helm/helm   # local path in repo
+      reconcileStrategy: Revision # updates when anything changes in the chart directory
       sourceRef:
         kind: GitRepository
         name: flux-system
@@ -26,7 +27,7 @@ spec:
   chart:
     spec:
       chart: ./apps/base/playground/local-helm/helm   # local path in repo
-      reconcileStrategy: Revision
+      reconcileStrategy: ChartVersion # updates when chart version changes
       sourceRef:
         kind: GitRepository
         name: flux-system
