@@ -7,4 +7,3 @@ resources:
   - ../base/n8n
   - ../base/ollama
   - ../base/playground
-  # - ../base/key-sync
