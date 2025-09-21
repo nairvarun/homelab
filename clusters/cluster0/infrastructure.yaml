@@ -34,7 +34,7 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: infra-service-accounts
+  name: infra-rbac
   namespace: flux-system
 spec:
   interval: 1m
@@ -43,6 +43,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/service-accounts
+  path: ./infrastructure/rbac
   prune: true
   wait: true
