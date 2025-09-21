@@ -4,5 +4,4 @@ labels:
   - pairs:
       app: local-helm
 resources:
-  - namespace.yaml
   - helmrelease.yaml

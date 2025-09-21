@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: playground-argocd-helm-app-dev
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: playground-argocd-helm-app-prod
