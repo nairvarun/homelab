@@ -1,4 +1,4 @@
 apiVersion: v2
 name: playground-fluxcd-helm-app
 description: playground-fluxcd-helm-app Helm Chart
-version: 1.0.0
+version: 1.0.1
