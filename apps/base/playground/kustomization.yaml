@@ -6,3 +6,4 @@ labels:
 resources:
   - namespace.yaml
   - fluxcd/helm-app
+  - fluxcd/kustomize-app
