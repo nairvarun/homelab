@@ -27,6 +27,10 @@ spec:
         kind: HelmRepository
         name: argo
         namespace: argocd-system
+  values:
+    configs:
+      params:
+        server.insecure: true
   upgrade:
     crds: CreateReplace
 ---

@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   - sealed-secrets.yaml
   - cloudnative-pg.yaml
-  - argocd.yaml
+  # - argocd.yaml
