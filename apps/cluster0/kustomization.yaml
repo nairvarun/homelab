@@ -4,6 +4,3 @@ resources:
   - ../base/cloudflared
   - ../base/cockpit
   - ../base/postgresql
-  - ../base/n8n
-  - ../base/ollama
-  - ../base/playground
