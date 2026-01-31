@@ -5,4 +5,4 @@ labels:
       app: ollama
 resources:
   - namespace.yaml
-  - yoga/gul/deployment.yaml
+  - yoga/root/deployment.yaml

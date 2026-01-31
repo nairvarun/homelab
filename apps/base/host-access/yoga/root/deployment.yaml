@@ -37,5 +37,5 @@ spec:
       volumes:
       - name: host
         hostPath:
-          path: /home/nv
+          path: /
       restartPolicy: Always
