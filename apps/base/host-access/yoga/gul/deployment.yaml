@@ -1,0 +1,40 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yoga-gul
+  namespace: host-access
+spec:
+  selector:
+    matchLabels:
+      name: yoga-gul
+  template:
+    metadata:
+      labels:
+        name: yoga-gul
+    spec:
+      hostNetwork: true
+      hostPID: true
+      hostIPC: true
+      containers:
+      - name: yoga-gul
+        image: ubuntu:latest
+        command: ["/bin/bash", "-c"]
+        args:
+          - |
+            # Install sudo if needed
+            apt-get update && apt-get install -y sudo
+            # chroot into host and switch to user gul
+            exec chroot /host su - nv
+        stdin: true
+        tty: true
+        securityContext:
+          privileged: true
+        volumeMounts:
+        - name: host
+          mountPath: /host
+      volumes:
+      - name: host
+        hostPath:
+          path: /
+      restartPolicy: Always
