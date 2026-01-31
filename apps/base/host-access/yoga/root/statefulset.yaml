@@ -31,11 +31,11 @@ spec:
           mountPath: /host
         resources:
           requests:
-            memory: "64Mi"
-            cpu: "100m"
-          limits:
-            memory: "128Mi"
+            memory: "256Mi"
             cpu: "200m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
       volumes:
       - name: host
         hostPath:
