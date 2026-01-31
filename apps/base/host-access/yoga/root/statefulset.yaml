@@ -1,10 +1,12 @@
 ---
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: yoga-root
   namespace: host-access
 spec:
+  serviceName: yoga-root
+  replicas: 1
   selector:
     matchLabels:
       name: yoga-root
