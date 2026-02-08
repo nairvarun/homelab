@@ -20,7 +20,7 @@ spec:
       hostIPC: true
       containers:
       - name: yoga-root
-        image: ubuntu:latest
+        image: alpine:latest
         command: ["sleep", "infinity"]
         stdin: true
         tty: true
