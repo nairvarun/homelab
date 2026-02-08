@@ -1,2 +1,0 @@
-- values.yaml is needed. can be empty
-- for any change to be picked up, the chart version needs to be bumped up
