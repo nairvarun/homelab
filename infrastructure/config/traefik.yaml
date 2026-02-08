@@ -6,5 +6,4 @@ metadata:
 spec:
   valuesContent: |-
     additionalArguments:
-      - --entrypoints.ssh.address=:22/tcp
       - --api.insecure=true
