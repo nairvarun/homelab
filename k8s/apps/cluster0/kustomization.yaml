@@ -4,4 +4,3 @@ resources:
   - ../base/cloudflared
   - ../base/cockpit
   - ../base/host-access
-  - ../base/test
