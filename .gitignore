@@ -2,6 +2,3 @@
 **/.terraform/
 **/terraform.tfstate
 **/terraform.tfstate.backup
-
-# except bootstrap
-!iac/tf/aws/global/bootstrap/terraform.tfstate
