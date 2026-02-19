@@ -2,5 +2,6 @@
     "yaml.schemas": {
         "https://www.schemastore.org/yamllint.json": "file:///Users/nv/dev/homelab/apps/base/postgresql/cluster.yaml",
         "kubernetes://schema/apps/v1@deployment": "file:///Users/nv/dev/homelab/apps/base/n8n/deployment.yaml"
-    }
+    },
+    "editor.tabSize": 2
 }
