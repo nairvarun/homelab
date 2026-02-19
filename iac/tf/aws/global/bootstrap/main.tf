@@ -15,7 +15,7 @@ provider "aws" {
 # s3
 module "name_s3_bucket" {
   source = "../../modules/naming"
-  purpose = "tf_state"
+  purpose = "tf-state"
 }
 
 resource "aws_s3_bucket" "tf_state" {
