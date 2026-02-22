@@ -14,8 +14,8 @@ terraform {
   }
 
   backend "s3" {
-    bucket         = "homelab-tf-state-85c020c7"
-    key            = "apps/personal/storage/terraform.tfstate"
+    bucket         = "homelab-tf-state-9bb31731"
+    key            = "aws/apps/personal/storage/terraform.tfstate"
     region         = "ap-south-1"
     dynamodb_table = "homelab-tf_lock"
     encrypt        = true
@@ -31,7 +31,7 @@ provider "aws" {
       Owner       = "nv"
       Repo        = "homelab"
       ManagedBy   = "terraform"
-      Module      = "personal/storage"
+      Module      = "apps/personal/storage"
     }
   }
 }
