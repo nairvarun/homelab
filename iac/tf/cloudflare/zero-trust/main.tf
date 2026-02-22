@@ -16,7 +16,10 @@ terraform {
   }
 }
 
-provider "cloudflare" {}
+provider "cloudflare" {
+  api_key = var.cloudflare_api_key
+  email = "nairvarun104@gmail.com"
+}
 
 locals {
   account_id = "43fdc05cb8ad9e08e7688dfc3be006fc"
