@@ -14,8 +14,8 @@ terraform {
   }
 
   backend "s3" {
-    bucket         = "homelab-tf-state-85c020c7"
-    key            = "global/governance/terraform.tfstate"
+    bucket         = "homelab-tf-state-9bb31731"
+    key            = "aws/global/governance/terraform.tfstate"
     region         = "ap-south-1"
     dynamodb_table = "homelab-tf_lock"
     encrypt        = true

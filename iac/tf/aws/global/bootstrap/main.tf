@@ -20,8 +20,8 @@ terraform {
 
   # move the initial tfstate from local to s3 
   backend "s3" {
-    bucket         = "homelab-tf-state-85c020c7"
-    key            = "global/bootstrap/terraform.tfstate"
+    bucket         = "homelab-tf-state-9bb31731"
+    key            = "aws/global/bootstrap/terraform.tfstate"
     region         = "ap-south-1"
     dynamodb_table = "homelab-tf_lock"
     encrypt        = true
