@@ -37,7 +37,7 @@ provider "aws" {
       Owner       = "nv"
       Repo        = "homelab"
       ManagedBy   = "terraform"
-      Module      = "bootstrap"
+      Module      = "global/bootstrap"
     }
   }
 }
