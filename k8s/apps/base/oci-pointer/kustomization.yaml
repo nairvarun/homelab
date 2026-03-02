@@ -1,14 +1,9 @@
 ---
-apiVersion: kustomize.toolkit.fluxcd.io/v1
+apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-metadata:
-  name: oci-pointer-executioner
-  namespace: flux-system
-spec:
-  interval: 1m
-  path: "./" # Points to where your kustomization.yaml is inside the OCI artifact
-  prune: true
-  sourceRef:
-    kind: OCIRepository
-    name: oci-pointer
-  targetNamespace: oci-pointer
+labels:
+  - pairs:
+      app: oci-pointer
+resources:
+  - namespace.yaml
+  - oci-repository.yaml

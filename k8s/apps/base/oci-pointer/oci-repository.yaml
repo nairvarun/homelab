@@ -9,3 +9,17 @@ spec:
   url: oci://docker.io/nairvarun/oci-pointer
   ref:
     tag: HEAD
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: oci-pointer-executioner
+  namespace: flux-system
+spec:
+  interval: 1m
+  path: "./" # Points to where your kustomization.yaml is inside the OCI artifact
+  prune: true
+  sourceRef:
+    kind: OCIRepository
+    name: oci-pointer
+  targetNamespace: oci-pointer
