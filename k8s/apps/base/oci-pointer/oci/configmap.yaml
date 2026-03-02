@@ -1,0 +1,8 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: oci-pointer-config
+  namespace: oci-pointer
+data:
+  foo: bar

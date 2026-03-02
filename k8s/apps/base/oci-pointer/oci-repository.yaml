@@ -1,0 +1,11 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: OCIRepository
+metadata:
+  name: oci-pointer
+  namespace: oci-pointer
+spec:
+  interval: 30s
+  url: oci://docker.io/nairvarun/oci-pointer
+  ref:
+    tag: HEAD
