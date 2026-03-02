@@ -3,7 +3,7 @@ apiVersion: source.toolkit.fluxcd.io/v1
 kind: OCIRepository
 metadata:
   name: oci-pointer
-  namespace: oci-pointer
+  namespace: flux-system
 spec:
   interval: 30s
   url: oci://docker.io/nairvarun/oci-pointer
