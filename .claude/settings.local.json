@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git push:*)",
+      "Bash(flux logs:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(flux get sources git:*)",
+      "Bash(flux get:*)",
+      "Bash(kubectl get:*)" 
+    ]
+  }
+}
