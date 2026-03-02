@@ -5,4 +5,4 @@ metadata:
   name: oci-pointer-config
   namespace: oci-pointer
 data:
-  foo: baz
+  foo: bar
