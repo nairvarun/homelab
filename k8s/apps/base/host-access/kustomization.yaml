@@ -7,3 +7,5 @@ resources:
   - namespace.yaml
   - yoga/root/statefulset.yaml
   - yoga/root/service.yaml
+  - sus/root/statefulset.yaml
+  - sus/root/service.yaml
