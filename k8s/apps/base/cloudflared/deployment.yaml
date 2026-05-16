@@ -1,10 +1,11 @@
 ---
 apiVersion: apps/v1
-kind: DaemonSet
+kind: Deployment
 metadata:
   name: cloudflared
   namespace: cloudflare
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: cloudflared
@@ -13,8 +14,6 @@ spec:
       labels:
         app: cloudflared
     spec:
-      hostNetwork: true
-      dnsPolicy: ClusterFirstWithHostNet
       containers:
       - name: cloudflared
         image: cloudflare/cloudflared:latest
@@ -30,4 +29,3 @@ spec:
               secretKeyRef:
                 name: cloudflare
                 key: tunnel-token-yoga
-      restartPolicy: Always

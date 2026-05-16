@@ -7,4 +7,4 @@ labels:
 resources:
   - namespace.yaml
   - sealed-secret.yaml
-  - daemonset.yaml
+  - deployment.yaml
