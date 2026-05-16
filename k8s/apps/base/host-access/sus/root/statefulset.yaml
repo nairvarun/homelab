@@ -1,0 +1,50 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: sus-root
+  namespace: host-access
+spec:
+  serviceName: sus-root
+  replicas: 1
+  selector:
+    matchLabels:
+      name: sus-root
+  template:
+    metadata:
+      labels:
+        name: sus-root
+    spec:
+      hostNetwork: true
+      hostPID: true
+      hostIPC: true
+      nodeSelector:
+        kubernetes.io/hostname: sus
+      tolerations:
+      - key: workload
+        operator: Equal
+        value: light
+        effect: NoExecute
+      containers:
+      - name: sus-root
+        image: alpine:latest
+        command: ["sleep", "infinity"]
+        stdin: true
+        tty: true
+        securityContext:
+          privileged: true
+        volumeMounts:
+        - name: host
+          mountPath: /host
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "200m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+      volumes:
+      - name: host
+        hostPath:
+          path: /
+      restartPolicy: Always
