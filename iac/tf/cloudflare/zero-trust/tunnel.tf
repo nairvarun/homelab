@@ -18,11 +18,6 @@ resource "cloudflare_zero_trust_tunnel_cloudflared_config" "yoga" {
         }
       },
       {
-        hostname = "jenkins.nairvarun.com"
-        service  = "http://localhost:8866"
-        origin_request = {}
-      },
-      {
         hostname = "*.nairvarun.com"
         service  = "http://localhost:80"
         origin_request = {}
