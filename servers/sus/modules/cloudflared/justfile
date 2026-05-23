@@ -1,0 +1,19 @@
+export CLOUDFLARED_KEY := `sops -d key.enc.txt`
+
+install:
+	# Add cloudflared.repo to /etc/yum.repos.d/
+	curl -fsSl https://pkg.cloudflare.com/cloudflared.repo | sudo tee /etc/yum.repos.d/cloudflared.repo
+
+	#update repo
+	sudo yum update
+
+	# install cloudflared
+	sudo yum install cloudflared 
+
+run:
+	cloudflared tunnel run --token $CLOUDFLARED_KEY
+
+
+enable:
+	sudo cloudflared service install $CLOUDFLARED_KEY
+

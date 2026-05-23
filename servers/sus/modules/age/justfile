@@ -1,0 +1,21 @@
+install:
+  sudo dnf install age
+
+generate filename="":
+  #!/usr/bin/env bash
+  set -euo pipefail
+
+  if [ -z "{{filename}}" ]; then
+      target="$HOME/.config/sops/age/keys.txt"
+  else
+      target="{{filename}}"
+  fi
+
+  if [ -f "$target" ]; then
+      echo "error: $target already exists, aborting"
+      exit 1
+  fi
+
+  mkdir -p "$(dirname $target)"
+  age-keygen -o "$target"
+  echo "key written to $target"

@@ -1,0 +1,11 @@
+mod sops 'modules/sops'
+mod age 'modules/age'
+mod opencode 'modules/opencode'
+mod cloudflared 'modules/cloudflared'
+
+default:
+  @just --list
+
+bootstrap:
+  ./bootstrap.sh
+
