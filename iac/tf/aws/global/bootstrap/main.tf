@@ -24,7 +24,7 @@ terraform {
     key            = "aws/global/bootstrap/terraform.tfstate"
     profile        = "nv"
     region         = "ap-south-1"
-    dynamodb_table = "homelab-tf_lock"
+    use_lockfile   = true
     encrypt        = true
   }
 }

@@ -1,1 +1,1 @@
-enable_state_locking = true
+enable_state_locking = false
