@@ -2,6 +2,7 @@ mod sops 'modules/sops'
 mod age 'modules/age'
 mod opencode 'modules/opencode'
 mod cloudflared 'modules/cloudflared'
+mod haproxy 'modules/haproxy'
 
 default:
   @just --list
