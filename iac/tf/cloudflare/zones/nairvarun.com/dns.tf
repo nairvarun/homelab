@@ -16,15 +16,6 @@ resource "cloudflare_dns_record" "root_a" {
   ttl     = 1
 }
 
-resource "cloudflare_dns_record" "k8s_cname" {
-  zone_id = local.zone_id
-  name    = "k8s"
-  type    = "CNAME"
-  content = "${local.tunnel_id}.cfargotunnel.com"
-  proxied = true
-  ttl     = 1
-}
-
 resource "cloudflare_dns_record" "wildcard_cname" {
   zone_id = local.zone_id
   name    = "*"
