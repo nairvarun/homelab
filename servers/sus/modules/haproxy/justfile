@@ -1,9 +1,17 @@
 install:
   sudo dnf install haproxy
 
+enable:
+  sudo systemctl start haproxy
+  sudo systemctl enable haproxy
+
+disable:
+  sudo systemctl stop haproxy
+  sudo systemctl disable haproxy
+
 selinux:
-  # allow httpd to connect to cockpit cunning on :9090
-  sudo semanage port -m -t http_port_t -p tcp 9090
+  sudo semanage port -m -t http_port_t -p tcp 9090 # cockpit
+  sudo semanage port -a -t http_port_t -p tcp 6443 # k8s
 
 configure:
   sudo cp ./haproxy.cfg /etc/haproxy/haproxy.cfg
