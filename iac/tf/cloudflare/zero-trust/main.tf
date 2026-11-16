@@ -9,7 +9,6 @@ terraform {
   backend "s3" {
     bucket         = "homelab-tf-state-9bb31731"
     key            = "cloudflare/zero-trust/terraform.tfstate"
-    profile        = "nv"
     region         = "ap-south-1"
     use_lockfile   = true
     encrypt        = true
