@@ -18,7 +18,7 @@ resource "cloudflare_dns_record" "root_a" {
 
 resource "cloudflare_dns_record" "wildcard_cname" {
   zone_id = local.zone_id
-  name    = "*"
+  name    = "minecraft"
   type    = "CNAME"
   content = "${local.tunnel_id}.cfargotunnel.com"
   proxied = true

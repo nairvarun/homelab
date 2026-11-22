@@ -22,6 +22,13 @@ resource "cloudflare_zero_trust_tunnel_cloudflared_config" "yoga" {
         }
       },
       {
+        hostname = "minecraft.nairvarun.com"
+        service  = "tcp://${local.yoga_ip}:25565"
+        origin_request = {
+          no_tls_verify = true
+        }
+      },
+      {
         service = "http_status:404"
       }
     ]
