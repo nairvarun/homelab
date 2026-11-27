@@ -16,15 +16,6 @@ resource "cloudflare_dns_record" "root_a" {
   ttl     = 1
 }
 
-resource "cloudflare_dns_record" "wildcard_cname" {
-  zone_id = local.zone_id
-  name    = "minecraft"
-  type    = "CNAME"
-  content = "${local.tunnel_id}.cfargotunnel.com"
-  proxied = true
-  ttl     = 1
-}
-
 resource "cloudflare_dns_record" "www_cname" {
   zone_id = local.zone_id
   name    = "www"
@@ -33,3 +24,22 @@ resource "cloudflare_dns_record" "www_cname" {
   proxied = true
   ttl     = 1
 }
+
+resource "cloudflare_dns_record" "minecraft_cname" {
+  zone_id = local.zone_id
+  name    = "minecraft"
+  type    = "CNAME"
+  content = "${local.tunnel_id}.cfargotunnel.com"
+  proxied = true
+  ttl     = 1
+}
+
+resource "cloudflare_dns_record" "ntfy_cname" {
+  zone_id = local.zone_id
+  name    = "ntfy"
+  type    = "CNAME"
+  content = "${local.tunnel_id}.cfargotunnel.com"
+  proxied = true
+  ttl     = 1
+}
+

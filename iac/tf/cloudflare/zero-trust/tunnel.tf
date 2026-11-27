@@ -29,6 +29,13 @@ resource "cloudflare_zero_trust_tunnel_cloudflared_config" "yoga" {
         }
       },
       {
+        hostname = "ntfy.nairvarun.com"
+        service  = "http://localhost:2586"
+        origin_request = {
+          no_tls_verify = true
+        }
+      },
+      {
         service = "http_status:404"
       }
     ]
